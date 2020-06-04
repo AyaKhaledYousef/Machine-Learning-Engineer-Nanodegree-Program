@@ -5,14 +5,14 @@ class LSTMClassifier(nn.Module):
     This is the simple RNN model we will be using to perform Sentiment Analysis.
     """
 
-    def __init__(self, embedding_dim, hidden_dim, vocab_size):
+    def __init__(self, embedding_dim, hidden_dim, vocab_size, n_layers=2, drop_prob=0.5):
         """
         Initialize the model by settingg up the various layers.
         """
         super(LSTMClassifier, self).__init__()
 
         self.embedding = nn.Embedding(vocab_size, embedding_dim, padding_idx=0)
-        self.lstm = nn.LSTM(embedding_dim, hidden_dim)
+        self.lstm = nn.LSTM(embedding_dim, hidden_dim, n_layers, dropout=drop_prob,)
         self.dense = nn.Linear(in_features=hidden_dim, out_features=1)
         self.sig = nn.Sigmoid()
         
