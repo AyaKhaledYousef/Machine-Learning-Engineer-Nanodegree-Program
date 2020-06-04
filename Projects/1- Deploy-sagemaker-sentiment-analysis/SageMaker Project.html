@@ -13535,7 +13535,19 @@ Saving to: ‘../data/aclImdb_v1.tar.gz’
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
-<p>'review_to_words' removes punctuation marks and also some last letters of some of the words. It also removes stop words, also converts all the words in the review to lowercase</p>
+<p>As I can see ,'review_to_words':</p>
+
+<pre><code>1- It converted all the word to lowercase.
+
+2- It removed any html tags.
+
+3- It split the string into words.
+
+4- It put each word into sorted index.
+
+5- It removed the punctuation
+
+6- It removed stopwords.</code></pre>
 
 </div>
 </div>
@@ -13666,8 +13678,8 @@ Saving to: ‘../data/aclImdb_v1.tar.gz’
     
     
     <span class="n">word_count</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1"># A dict storing the words that appear in the reviews along with how often they occur</span>
-    <span class="k">for</span> <span class="n">sentence</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">sentence</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">word_count</span><span class="p">:</span>
                 <span class="n">word_count</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
             <span class="k">else</span><span class="p">:</span>
@@ -13675,7 +13687,6 @@ Saving to: ‘../data/aclImdb_v1.tar.gz’
     <span class="c1"># TODO: Sort the words found in `data` so that sorted_words[0] is the most frequently appearing word and</span>
     <span class="c1">#       sorted_words[-1] is the least frequently appearing word.</span>
     
-    <span class="n">sorted_words</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">sorted_words</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">word_count</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">word_count</span><span class="o">.</span><span class="n">get</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     
@@ -13715,8 +13726,19 @@ Saving to: ‘../data/aclImdb_v1.tar.gz’
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong> 
-movi, film, one, like and time are the most frequently appearing tokenized words in the training set</p>
+<p><strong>Answer:</strong></p>
+<ul>
+<li><p>movi</p>
+</li>
+<li><p>film</p>
+</li>
+<li><p>one</p>
+</li>
+<li><p>like</p>
+</li>
+<li><p>time</p>
+</li>
+</ul>
 
 </div>
 </div>
@@ -13958,7 +13980,13 @@ good
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong> It gives up the information of words not appreaing in word_dict. All these input vectors are now the same size.</p>
+<p><strong>Answer:</strong></p>
+<ul>
+<li><p><strong>convert_and_pad_data</strong> :it saves the len(data) as constant.</p>
+</li>
+<li><p><strong>preprocess_data</strong> : we must preprocess our data before start to trainig or testing our data</p>
+</li>
+</ul>
 
 </div>
 </div>
@@ -14625,8 +14653,13 @@ Billable seconds: 6159
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong>
- The xgb was slightly better but by a small margin,The XGBoost model created earlier had an accuracy so close to this model</p>
+<p><strong>Answer:</strong></p>
+<ul>
+<li><p>I think XGBoost is better. and the accuracy in NN is 0.85336</p>
+</li>
+<li><p>defferently on the dataset =&gt; becouse of the Neural Network need more training.</p>
+</li>
+</ul>
 
 </div>
 </div>
